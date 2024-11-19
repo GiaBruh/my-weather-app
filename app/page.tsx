@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import NavBar from "@/components/custom/NavBar";
 
 type weatherData = {
   address: string;
@@ -26,24 +19,9 @@ type weatherData = {
 };
 
 export default async function Home() {
-  const data = await fetch("http://localhost:8080/api/weather/all", {
-    cache: "force-cache",
-  });
-  const weather: weatherData = await data.json();
   return (
-    <>
-      <Card className="w-60">
-        <CardHeader>
-          <CardTitle>{weather.address}</CardTitle>
-          <CardDescription>Timezone: {weather.timezone}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>{weather.days[0].conditions}</p>
-        </CardContent>
-        <CardFooter>
-          <p>Quote of the day</p>
-        </CardFooter>
-      </Card>
-    </>
+    <main className="mx-[1rem] lg:m-[2rem] xl:mx-[6rem] 2xl:mx-[16rem] m-auto">
+      <NavBar />
+    </main>
   );
 }
