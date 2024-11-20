@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Command, CommandInput } from "@/components/ui/command";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { commandIcon } from "@/utils/icons";
+import { commandIcon } from "@/app/utils/Icons";
 import React from "react";
 
 const SearchDialog = () => {
